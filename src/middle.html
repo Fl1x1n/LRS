@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        .grid-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #d8ffda;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid-item h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.5em;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .grid-item .description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #4e4e4e;
+            text-align: justify;
+            padding: 10px;
+        }
+
+        a.grid-item {
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <a href="/Guitars/Stratocaster.html" class="grid-item">
+            <h2 class="title">Stratocaster</h2>
+            <img src="Strat.png" alt="Stratocaster Image">
+            <div class="description">A Stratocaster talvez seja o modelo mais icónico de guitarras
+                elétricas. Produzido pela Fender desde 1952, a Stratocaster é dos formatos e modelos mais
+                versáteis já criados. Outras marcas também fazem modelos de mesmo
+                formato, como a jackson, ibanez, charvel, entre outras. Curiosidade: O criador deste modelo,
+                Leo Fender, não sabia de facto tocar guitarra. Para a criação deste modelo, Leo falou com
+                diversos guitarristas e perguntou o que eles gostavam de ter numa guitarra, desde formato
+                à parte elétrica.</div>
+        </a>
+        <a href="/Guitars\Telecaster.html" class="grid-item">
+            <h2 class="title">Telecaster</h2>
+            <img src="Tele.png" alt="Telecaster Image">
+            <div class="description">Com um formato mais simples, mas igualmente icónico e elegante, a
+                Telecaster é amplamente conhecida pela sua sonoridade ideal para Blues e Country.
+                Começou produção em 1950, tendo o seu design criado por Leo Fender.
+                Este tipo de guitarra normalmente apresenta uma eletrónica mais simples e
+                fácil de perceber.
+            </div>
+        </a>
+        <a href="/Guitars\Jaguar.html" class="grid-item">
+            <h2 class="title">Jaguar</h2>
+            <img src="Jaguar.png" alt="Jaguar Image">
+            <div class="description">Até hoje não se sabe bem o porquê da Fender ter criado tal
+                abominação.Muitos apontam que foi uma tentativa de criar uma guitarra para tocar
+                jazz e smurf, apesar de não ter recebido grande apelo por parte dos guitarristas
+                de ambos os géneros musicais. Esta só veio a ganhar a sua devida popularidade
+                depois de Kurt Cobain aparecer em palco com uma (Guitarrista dos Nirvana).
+                Este colocava fita cola nas chaves seletoras localizadas do lado esquerdo da guitarra,
+                pois o incomodavam enquanto ele tocava, devido ao seu strumming agressivo.</div>
+        </a>
+        <a href="/Guitars\LesPaul.html" class="grid-item">
+            <h2 class="title">Les Paul</h2>
+            <img src="LP.png" alt="Les Tonelada Image">
+            <div class="description">Outro modelo com um formato icónico, porém por parte da Gibson.
+                Uma marca que (quase) sempre foi sinónimo de qualidade, apresentando modelos com
+                designs interessantes e apelativos. A Les Paul, projetada pelo designer de mesmo
+                nome, apresenta um visual elegante e um peso digno de um camião. Trata-se também
+                de uma guitarra bastante versátil, sendo usada no rock, hard rock e até em algumas
+                bandas de heavy metal.</div>
+        </a>
+        <a href="/Guitars\SG.html" class="grid-item">
+            <h2 class="title">SG</h2>
+            <img src="SG.png" alt="Perfection Image">
+            <div class="description">Simplesmente o formato double cut mais atraente já criado.
+                Esta frase chegava para descrever o modelo SG, mas este merece isto e muito mais
+                que se lhe diga. Com um corpo em mogno e sendo mais conhecida na sua cor vermelha,
+                a SG é a favorita de dois astros da música, Angus Young dos AC/DC e Tony Iommi,
+                dos Black Sabbath.</div>
+        </a>
+        <a href="/Guitars\FlyingV.html" class="grid-item">
+            <h2 class="title">Flying V</h2>
+            <img src="FlyV.png" alt="Flying V Image">
+            <div class="description">Uma guitarra também fabricada pela gibson com um visual heavy
+                mas com um "feeling" clássico. Isto deve-se aos seus vértices arredondados,
+                dando um visual apelativo ao instrumento. Usada principalmente para Rock Metal, tendo
+                passado pelas mãos de Michael Schenker (U.F.O.), Kirk Hammet (Metallica) e até mesmo
+                pelo pioneiro do Rock Jimi Hendrix.
+                Este formato de guitarra iria levar à criação de outros modelos, como a King V.</div>
+        </a>
+        <a href="/Guitars\Arrow.html" class="grid-item">
+            <h2 class="title">Arrow</h2>
+            <img src="Arrow.png" alt="Arrow Image">
+            <div class="description">Pouco se pode dizer da Arrow. Atualmente, esta só é comercializada
+                pela ESP, tendo um formato idêntico à flying V, mas com um toque mais agressivo e pesado.
+                Esta é comunmente equipada com pontes "Floyd Rose". Apresenta um formato em V, porém
+                lembrando mais o formato de uma flecha.</div>
+        </a>
+        <a href="/Guitars\ML.html" class="grid-item">
+            <h2 class="title">ML</h2>
+            <img src="ML.png" alt="ML Image">
+            <div class="description">O formato ML é um dos formatos mais icónicos e com maior combinação
+                de hardware e visuais. A Dean sempre esteve voltada para modelos com visuais mais
+                estravagantes e apelativos, sendo que a sua sonoridade não deixa em momento algum a desejar.
+                O formato ML ganhou popularidade depois de passar pelas mãos de Dimebag Derrel,
+                guitarrista dos Pantera.</div>
+        </a>
+        <a href="/Guitars\Iceman.html" class="grid-item">
+            <h2 class="title">Iceman</h2>
+            <img src="IceMan.png" alt="Iceman Image">
+            <div class="description">Um formato fabricado principalmente pela Ibanez, uma marca japonesa
+                com vários modelos interessantes. Mas desta vez, será falado da Iceman, uma guitarra
+                com um formato deveras peculiar e interessante. Esta guitarra é principalmente conhecida
+                pelo facto do guitarrista e vocalista dos Kiss, Paul Stanley, ter um modelo Iceman, que
+                utilizou em quase todos os seus concertos.</div>
+        </a>
+    </div>
+</body>
+
+</html>

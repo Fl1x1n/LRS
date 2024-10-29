@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #680c0c; 
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #680c0c; 
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #59FF60; 
+        }
+
+        .guitar-img {
+            width: 150px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .guitar-img:hover {
+            transform: scale(1.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #680c0c;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #59FF60; 
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        ul li:hover {
+            color: #59FF60; 
+        }
+
+        
+        .brand-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #680c0c; 
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .brand-link:hover {
+            background-color: #59FF60; 
+            color: #333;
+            transform: scale(1.05);
+        }
+
+   
+        .back-button {
+            display: block;
+            padding: 12px 20px;
+            margin: auto;
+            background-color: #680c0c; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-button:hover {
+            background-color: #59FF60; 
+            color: #333;
+            transform: scale(1.05);
+        }
+
+        body {
+            transition: background-color 0.5s ease;
+        }
+
+   
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+     
+        .flex-item {
+            width: 48%;
+        }
+
+        .flex-item ul {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guitar Collection</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Guitar Name</th>
+                <th>Brand</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="guitar1.jpg" alt="Guitar 1" class="guitar-img"></td>
+                <td>Fender Stratocaster</td>
+                <td>Fender</td>
+                <td>Electric</td>
+                <td>1200€</td>
+                <td><a href="https://www.thomann.de/fender_stratocaster">Buy Here</a></td>
+            </tr>
+            <tr>
+                <td><img src="guitar2.jpg" alt="Guitar 2" class="guitar-img"></td>
+                <td>Gibson Les Paul</td>
+                <td>Gibson</td>
+                <td>Electric</td>
+                <td>2300€</td>
+                <td><a href="https://www.thomann.de/gibson_lespaul">Buy Here</a></td>
+            </tr>
+            <tr>
+                <td><img src="guitar3.jpg" alt="Guitar 3" class="guitar-img"></td>
+                <td>Dean ML</td>
+                <td>Dean</td>
+                <td>Electric</td>
+                <td>1500€</td>
+                <td><a href="https://www.guitarcenter.com/Dean/ML-Select-24-Quilted-Top-Electric-Guitar-Trans-Blue-1500000367305.gc">Buy Here</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="flex-container">
+      
+        <div class="flex-item">
+            <h2>Types of Guitars</h2>
+            <ul>
+                <li>Electric Guitars</li>
+                <li>Acoustic Guitars</li>
+                <li>Bass Guitars</li>
+                <li>Classical Guitars</li>
+            </ul>
+        </div>
+
+
+        <div class="flex-item">
+            <h2>Popular Guitar Brands</h2>
+            <ul>
+                <li><a href="https://www.fender.com" class="brand-link">Fender</a></li>
+                <li><a href="https://www.gibson.com" class="brand-link">Gibson</a></li>
+                <li><a href="https://www.deanguitars.com" class="brand-link">Dean</a></li>
+                <li><a href="https://www.ibanez.com" class="brand-link">Ibanez</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="button-container">
+        <a href="index.html">
+            <button class="back-button">Página Principal</button>
+        </a>
+    </div>
+</body>
+
+</html>
