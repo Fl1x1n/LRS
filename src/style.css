@@ -1,15 +1,20 @@
 @import url('https://fonts.cdnfonts.com/css/iron-maiden');
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #680c0c;
-}
-
 :root {
     --_icon-size: 3rem;
+    --body-width: 1280px;
 }
+
+body {
+    max-width: var(--body-width);
+    padding: 0;
+    margin: 0 auto;
+    font-family: Arial, sans-serif; 
+    background-color: #470d00; 
+    color: #333; 
+}
+
+
 
 button {
     all: unset;
@@ -18,44 +23,69 @@ button {
 .header {
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: #000000; 
+    color: #ffffff; 
     position: sticky;
- top: 0;
+    top: 0;
     z-index: 1000;
-    padding: 0.5rem;
+    padding: 10px;
+    border-radius: 5px;
 }
+
+.fancy-text {
+    --bg-size: 400%;
+    --color-one: hsl(0, 100%, 27%);
+    --color-two: hsl(0, 98%, 60%);
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 14s infinite linear;
+    font-family: 'Iron Maiden', sans-serif; 
+    font-size: 36px;
+    font-weight: bolder;
+    margin-right: auto;
+    -webkit-text-stroke-width: 0.1px;
+    position: relative;
+  }
+  
+
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+  
 
 .header img {
-    height: 60px;
-    image-rendering: pixelated;
-    margin-right: 2rem;
+    height: 80px;
+    image-rendering: pixelated; 
+    margin-right: 20px;
 }
 
-.header h1 {
-    font-family: 'Iron Maiden', sans-serif;
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    position: relative;
-    margin-right: auto;
-}
-
-.menu-icon  img{
+.menu-icon img {
     width: var(--_icon-size);
     height: var(--_icon-size);
 }
 
 .menu-icon {
+    display: flex;
+    align-items: center;
     position: relative;
     z-index: 10;
 }
 
 .dmicon {
     font-size: 3rem;
-    color: #FC4040;
     transition: all 400ms ease-in-out;
 }
 
-.dmicon:hover  {
+.dmicon:hover, .menu-box:hover ~ .dmicon {
     filter: brightness(0) saturate(100%) invert(75%) sepia(46%) saturate(2202%) hue-rotate(90deg) brightness(107%) contrast(102%);
     font-size: 4rem;
     rotate: 180deg;
@@ -63,39 +93,38 @@ button {
 
 .menu-box {
     position: absolute;
-    top: 0;
     visibility: hidden;
     opacity: 0;
-    right: 60px;
-    transition: all 400ms cubic-bezier(.32,.75,.63,.88);
+    right: 40px;
+    transition: all 400ms cubic-bezier(.32, .75, .63, .88);
     transition-delay: 100ms;
     pointer-events: none;
     z-index: 1;
 }
 
-.menu-icon:hover .menu-box {
+.menu-icon:hover .menu-box,
+.menu-box:focus,
+.menu-box:hover {
     visibility: visible;
     opacity: 1;
     pointer-events: all;
-    right: 80px; 
+    right: 68px; 
 }
 
 .menu-links {
     display: flex;
+    align-items: center;
 }
 
-.menu-links a {
+ .menu-links a {
     text-decoration: none;
-    color: #dfdfdf;
-    padding: 10px 20px;
-    margin: 5px 0;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu-links a:hover {
-    background-color: #59FF60;
-    color: #000000;
+    color: #ff3c3c; 
 }
 
 .content {
@@ -105,76 +134,38 @@ button {
     margin: 0 auto;
 }
 
-.arrow-icon  img{
+.arrow-icon img {
     width: var(--_icon-size);
     height: var(--_icon-size);
 }
 
 
-h1::before {
-    transform: scaleX(0);
-    transform-origin: bottom right;
-}
 
-h1:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
 
-h1::before {
-    width: 105%;
-    height: 120%;
-    content: " ";
-    display: block;
-    position: absolute;
-    inset: 0;
-    left: -2.5%;
-    top: -10%;
-    background: #FC4040;
-    z-index: -1;
-    transition: transform .8s ease;
-    border-radius: 8px;
-}
-
-h1 {
-    position: relative;
-    font-size: 5rem;
-}
-
-html {
-    block-size: 120%;
-    inline-size: 100%;
-}
-
-@media (orientation: landscape) {
-    body {
-        grid-auto-flow: column;
-    }
-}
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    padding: 2rem;
+    padding-top: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .grid-item {
-    border: 1px solid #ddd;
+    border: 3px solid #00ff00; 
     border-radius: 10px;
     padding: 10px;
-    background-color: #d8ffda;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #d8ffda; 
+    box-shadow: 5px 5px 15px rgba(86, 1, 1, 0.3); 
     cursor: pointer;
     text-decoration: none;
     color: inherit;
-
 }
 
 .grid-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
 }
 
 .grid-item h2 {
@@ -195,7 +186,7 @@ html {
 .grid-item .description {
     margin-top: 10px;
     font-size: 14px;
-    color: #4e4e4e;
+    color: #4e4e4e; 
     text-align: justify;
     padding: 10px;
 }
