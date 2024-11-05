@@ -7,7 +7,6 @@
     <title>Last Rose of Summer</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header class="header">
         <img src="Rose.svg" alt="Left Image">
@@ -24,8 +23,10 @@
             <img src="mdi--menu.svg" name="menu" class="dmicon" alt="Menu Image"></img>
         </div>
     </header>
-    <div class="grid-container">
-        <section class="card" style="grid-column: 1 / 4;--row:1;">
+    <div class="flex-layout">
+    <!--Sidbar Left-->
+    <aside class="sidebar sidebar--left">
+        <section class="card">
             <h2 class="fancy-text" style="--color-one: hsl(0, 100%, 22%);--color-two:hsl(0, 100%, 55%);">About us</h2> 
             <p>
             Last Rose of Summer is an online guitar store, founded in 2024 by Me. The idea came to life after I began
@@ -35,21 +36,41 @@
             Surfscape. Please visit his site once you're done with mine. (Please take into consideration that this Website
             is a mockup, so I'm not in fact selling guitars. Maybe one day 😊).</p>
         </section>
-        <section class="card" style="grid-column: 4 / 13;--row:1;">
+        <section class="card">
+            <h2 class="fancy-text" style="--color-one: hsl(236, 100%, 27%);--color-two:hsl(241, 98%, 60%);">Wants Tabs?
+            </h2>
+            <p>Check out Songsterr, my predilect tablature app.</p>
+            <img class="image" src="NDgd0bJO_400x400.png" alt="Songsterr_Logo" height="150px" width="150px">
+        </section>
+    </aside>
+    <!--Main Content-->
+    <main id="main-content" class="main-content">
+        <section class="card">
             <h2 class="fancy-text" style="--color-one: hsl(0, 0%, 0%);--color-two:hsl(0, 0%, 67%);">Check The Formats Available</h2>
             <p>Here you can check what formats we have available on our shop right now. Thrive among the different formats and 
                 chose the one that fits you best! Each format has a small description that includes their history and the most 
                 common specs on each one.
             </p>
-            <img src="Guitars/wallhaven-qd5d5l.jpg" alt="wallhaven_guitars" height="260px">
+            <img class="Guitar_Formats" src="guitar_banner.png" alt="wallhaven_guitars" height="260px">
         </section>
-
-        <section class="card" style="grid-column: 1 /  5;--row:2;">
-            <h2 class="fancy-text" style="--color-one: hsl(236, 100%, 27%);--color-two:hsl(241, 98%, 60%);">Wants Tabs?
-            </h2>
-            <p>Check out Songsterr, my predilect tablature app.</p>
+        <section class="card">
+            <h2 class="fancy-text" style="--color-one: hsl(0, 100%, 27%);--color-two:hsl(0, 98%, 60%);">Recommended
+                Songs</h2>
+                <p>This is the recommendation of Last Rose of Summer, songs may change periodicaly so that you have always
+                    a challenge ahead. Keep pushing your limits and you'll reach pro level in no time!
+                </p>
         </section>
-        <section class="card" style="grid-column: 5 / 13;--row:2;">
+        <section class="card">
+            <h2 class="fancy-text" style="--color-one: hsl(226, 100%, 27%);--color-two:hsl(0, 0%, 67%);">SurfScape</h2>
+            <p>As mentioned earlier, this website has a small section for my friend ReduxFlakes, that has helped me with 
+                a lot of things. Explore his projects and learn more about different things.
+            </p>
+            <img class="image" src="surfscape_blu_logo.png" alt="surfscape-banner" width="600px">
+        </section>
+    </main>
+    <!--Sidebar Right-->
+    <aside class="sidebar sidebar--right">
+        <section class="card">
             <h2 class="fancy-text" style="--color-one: hsl(117, 100%, 27%);--color-two:hsl(118, 98%, 60%);">Our Choice
             </h2>
             <p>Here you can see what models we recommend for different audiences, ranging from begginers to professional guitarists.
@@ -58,8 +79,7 @@
                 genres and people. And remember, always stick with the guitar that you like, either expensive or cheap.
             </p>
         </section>
-
-        <section class="card" style="grid-column: 1 /  4;--row:3;">
+        <section class="card">
             <h2 class="fancy-text" style="--color-one: hsl(181, 100%, 27%);--color-two:hsl(176, 98%, 60%);">Other Stores
             </h2>
             <p>We advise you to check out this stores too! They have more equipment and supply different instruments and 
@@ -67,26 +87,13 @@
                 country.
             </p>
         </section>
-        <section class="card" style="grid-column: 4 / 13;--row:3;">
-            <h2 class="fancy-text" style="--color-one: hsl(226, 100%, 27%);--color-two:hsl(0, 0%, 67%);">Surfscape</h2>
-            <p>As mentioned earlier, this website has a small section for my friend ReduxFlakes, that has helped me with 
-                a lot of things. Explore his projects and learn more about different things.
-            </p>
-        </section>
-
-        <section class="card" style="grid-column: 1 / 6;--row:4;">
-            <h2 class="fancy-text" style="--color-one: hsl(0, 100%, 27%);--color-two:hsl(0, 98%, 60%);">Recommended
-                Songs</h2>
-                <p>This is the recommendation of Last Rose of Summer, songs may change periodicaly so that you have always
-                    a challenge ahead. Keep pushing your limits and you'll reach pro level in no time!
-                </p>
-        </section>
         <section class="card" style="grid-column: 6 /  13;--row:4;">
             <h2 class="fancy-text" style="--color-one: hsl(282, 100%, 27%);--color-two:hsl(290, 98%, 60%);">Owner's
                 Personal Website</h2>
                 <p>This link redirects you to my personal website (under construction for now).</p>
         </section>
-    </div>
+    </aside>
+</div>
     <footer class="footer">
         By Fl1x1n 2024
     </footer>
