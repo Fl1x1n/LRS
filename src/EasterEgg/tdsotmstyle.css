@@ -1,25 +1,24 @@
 @font-face {
-    font-family: 'MyPixelFont'; /* Change to your desired font name */
-    src: url('fonts/mypixelfont.ttf') format('truetype'); /* Change to your font file path */
+    font-family: 'MyPixelFont'; 
+    src: url('fonts/mypixelfont.ttf') format('truetype'); 
 }
 body{
-    font-family: 'Press Start 2P', cursive; /* Fallback to a cursive font */
-    background-color: #000; /* Optional: set background color */
-    color: #00FF00; /* Example: bright green text */
+    font-family: 'Press Start 2P', cursive; 
+    background-color: #000; 
+    color: #00FF00; 
 }
 
 html {
-    background-color: #111; /* Dark background */
+    background-color: #111; 
     height: 100vh;
-    font-family: 'MyPixelFont', sans-serif; /* Fallback to a default font */
+    font-family: 'MyPixelFont', sans-serif; 
 }
 
 /* Triangle */
 #triangle {
     border-style: solid;
     border-width: 0 20vmin 34.64vmin 20vmin;
-    border-color: transparent transparent #fff transparent; /* White color for the triangle */
-    height: 0;
+    border-color: transparent transparent #fff transparent; 
     left: 50%;
     position: fixed;
     top: 50%;
@@ -31,7 +30,7 @@ html {
 #triangle-inner {
     border-style: solid;
     border-width: 0 19.6vmin 33.94vmin 19.6vmin;
-    border-color: transparent transparent #111 transparent; /* Use the same color as the background */
+    border-color: transparent transparent #111 transparent;
     filter: blur(1vmin);
     height: 0;
     left: 50%;
@@ -42,13 +41,13 @@ html {
     z-index: 1;
 }
 
-/* Hidden initially */
+
 .hidden {
     opacity: 0;
     transition: opacity 1s ease;
 }
 
-/* Refracted light effect */
+
 #refracted-light > .ray {
     background-image: linear-gradient(90deg, #fff, #111);
     height: 1px;
@@ -70,15 +69,15 @@ html {
 #refracted-light > .ray:nth-child(7) { transform: rotate(15deg); }
 
 html {
-    background-color: #111; /* Dark background */
+    background-color: #111; 
     height: 100vh;
 }
 
-/* Triangle */
+
 #triangle {
     border-style: solid;
     border-width: 0 20vmin 34.64vmin 20vmin;
-    border-color: transparent transparent #fff transparent; /* White color for the triangle */
+    border-color: transparent transparent #fff transparent; 
     height: 0;
     left: 50%;
     position: fixed;
@@ -91,7 +90,7 @@ html {
 #triangle-inner {
     border-style: solid;
     border-width: 0 19.6vmin 33.94vmin 19.6vmin;
-    border-color: transparent transparent #111 transparent; /* Use the same color as the background */
+    border-color: transparent transparent #111 transparent; 
     filter: blur(1vmin);
     height: 0;
     left: 50%;
@@ -102,13 +101,13 @@ html {
     z-index: 1;
 }
 
-/* Hidden initially */
+
 .hidden {
     opacity: 0;
     transition: opacity 1s ease;
 }
 
-/* Refracted light effect */
+
 #refracted-light > .ray {
     background-image: linear-gradient(90deg, #fff, #111);
     height: 1px;
@@ -130,22 +129,22 @@ html {
 #refracted-light > .ray:nth-child(7) { transform: rotate(15deg); }
 
 
-/* White light ray */
+
 #white-light {
     background-color: #fff;
     box-shadow: 0 0 1px 1px #fff;
     height: 1px;
-    right: 50vw; /* Inverted from right to left */
+    right: 50vw; 
     position: fixed;
     top: calc(50vh - 5vmin);
   margin-top: 9.7%;
-    transform: rotate(-10deg) scaleX(0); /* Adjusted rotation */
-    transform-origin: top left; /* Inverted from right to left */
+    transform: rotate(-10deg) scaleX(0);
+    transform-origin: top left; 
     width: 55vw;
     transition: transform 2s ease;
 }
 
-/* Rainbow rays */
+
 #rainbow > .ray {
     height: 1vmin;
     left: 50vw;
@@ -165,7 +164,7 @@ html {
 .violet { background-color: violet; top: calc(50vh - 3.5vmin); transform: rotate(13deg); }
 .purple { background-color: mediumpurple; ; height: 0.25vmin; top: calc(50vh - 3vmin); transform: rotate(14deg); }
 
-/* Rainbow rays */
+
 #rainbow > .ray {
     height: 4px;
     left: 50vw;
@@ -183,7 +182,7 @@ html {
 .blue { background-color: skyblue; box-shadow: 0 0 1vmin 1vmin skyblue; top: calc(50vh - 4vmin); transform: rotate(12deg); }
 .violet { background-color: violet; box-shadow: 0 0 1vmin 1vmin violet; top: calc(50vh - 3.5vmin); transform: rotate(13deg); }
 .purple { background-color: mediumpurple; box-shadow: 0 0 1vmin 1vmin mediumpurple; height: 0.25vmin; top: calc(50vh - 3vmin); transform: rotate(14deg);}
-/* Additional CSS for buttons and blinking message */
+
 
 .control-button {
     position: fixed;
@@ -209,7 +208,7 @@ html {
     bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Press Start 2P', sans-serif; /* Use a pixelated font */
+    font-family: 'Press Start 2P', sans-serif; 
     font-size: 4vmin;
     color: #fff;
     opacity: 1;
