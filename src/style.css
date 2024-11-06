@@ -185,6 +185,12 @@ a {
   padding: 0.75rem;
 }
 
+.image-cards{
+  background: hsla(0, 0%, 0%, 0.205);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
 .banner {
   display: block;
   margin: auto;
