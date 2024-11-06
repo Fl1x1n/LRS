@@ -13,8 +13,7 @@ html {
     height: 100vh;
     font-family: 'MyPixelFont', sans-serif; 
 }
-
-/* Triangle */
+/*Outline Shape*/
 #triangle {
     border-style: solid;
     border-width: 0 20vmin 34.64vmin 20vmin;
@@ -26,7 +25,7 @@ html {
     width: 0;
     z-index: 1;
 }
-
+/*Fill Shape*/
 #triangle-inner {
     border-style: solid;
     border-width: 0 19.6vmin 33.94vmin 19.6vmin;
@@ -41,14 +40,15 @@ html {
     z-index: 1;
 }
 
-
+/*Hidden rays*/
 .hidden {
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 4s ease-in;
 }
 
-
+/*Small white rays*/
 #refracted-light > .ray {
+   
     background-image: linear-gradient(90deg, #fff, #111);
     height: 1px;
     opacity: 0.5;
@@ -59,67 +59,6 @@ html {
     width: 8vmin;
     z-index: 1;
 }
-
-#refracted-light > .ray:nth-child(1) { transform: rotate(-9deg); }
-#refracted-light > .ray:nth-child(2) { transform: rotate(-5deg); }
-#refracted-light > .ray:nth-child(3) { transform: rotate(-1deg); }
-#refracted-light > .ray:nth-child(4) { transform: rotate(3deg); }
-#refracted-light > .ray:nth-child(5) { transform: rotate(7deg); }
-#refracted-light > .ray:nth-child(6) { transform: rotate(11deg); }
-#refracted-light > .ray:nth-child(7) { transform: rotate(15deg); }
-
-html {
-    background-color: #111; 
-    height: 100vh;
-}
-
-
-#triangle {
-    border-style: solid;
-    border-width: 0 20vmin 34.64vmin 20vmin;
-    border-color: transparent transparent #fff transparent; 
-    height: 0;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    z-index: 1;
-}
-
-#triangle-inner {
-    border-style: solid;
-    border-width: 0 19.6vmin 33.94vmin 19.6vmin;
-    border-color: transparent transparent #111 transparent; 
-    filter: blur(1vmin);
-    height: 0;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    z-index: 1;
-}
-
-
-.hidden {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-
-#refracted-light > .ray {
-    background-image: linear-gradient(90deg, #fff, #111);
-    height: 1px;
-    opacity: 0.5;
-    position: fixed;
-    right: calc(50vw - 0.5vmin);
-    top: calc(50vh - 3.5vmin);
-    transform-origin: top left;
-    width: 8vmin;
-    z-index: 1;
-}
-
 #refracted-light > .ray:nth-child(1) { transform: rotate(-9deg); }
 #refracted-light > .ray:nth-child(2) { transform: rotate(-5deg); }
 #refracted-light > .ray:nth-child(3) { transform: rotate(-1deg); }
@@ -129,7 +68,7 @@ html {
 #refracted-light > .ray:nth-child(7) { transform: rotate(15deg); }
 
 
-
+/*Main white ray*/
 #white-light {
     background-color: #fff;
     box-shadow: 0 0 1px 1px #fff;
@@ -143,28 +82,7 @@ html {
     width: 55vw;
     transition: transform 2s ease;
 }
-
-
-#rainbow > .ray {
-    height: 1vmin;
-    left: 50vw;
-    position: fixed;
-    transform-origin: top left;
-    width: 55vw;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  
-}
-
-.red { background-color: red; top: calc(50vh - 6vmin); transform: rotate(8deg); }
-.orange { background-color: orange;  top: calc(50vh - 5.5vmin); transform: rotate(9deg); }
-.yellow { background-color: yellow; top: calc(50vh - 5vmin); transform: rotate(10deg); }
-.green { background-color: yellowgreen;  top: calc(50vh - 4.5vmin); transform: rotate(11deg); }
-.blue { background-color: skyblue; top: calc(50vh - 4vmin); transform: rotate(12deg); }
-.violet { background-color: violet; top: calc(50vh - 3.5vmin); transform: rotate(13deg); }
-.purple { background-color: mediumpurple; ; height: 0.25vmin; top: calc(50vh - 3vmin); transform: rotate(14deg); }
-
-
+/*Rainbow rays*/
 #rainbow > .ray {
     height: 4px;
     left: 50vw;
@@ -183,7 +101,7 @@ html {
 .violet { background-color: violet; box-shadow: 0 0 1vmin 1vmin violet; top: calc(50vh - 3.5vmin); transform: rotate(13deg); }
 .purple { background-color: mediumpurple; box-shadow: 0 0 1vmin 1vmin mediumpurple; height: 0.25vmin; top: calc(50vh - 3vmin); transform: rotate(14deg);}
 
-
+/*Buttons*/
 .control-button {
     position: fixed;
    
@@ -231,3 +149,4 @@ html {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
