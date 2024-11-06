@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .player-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75em;
+            background: black;
+            color: white;
+            padding: 1rem;
+        }
+
+        .pc__title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .pc__artist {
+            opacity: 0.8;
+        }
+
+        button {
+            border: 1px solid white;
+            background: black;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            font-size: 2rem;
+        }
+
+        button:hover {
+            background: #252525;
+        }
+
+        .pc-btns {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player-container" id="player">
+        <span class="pc__title" id="title">Music Title</span>
+        <span class="pc__artist" id="artist">Artist</span>
+        <div class="pc-btns">
+            <button class="prev" id="previous">&#8672;</button>
+            <button class="play" id="play">&#8227;</button>
+            <button class="next" id="next">&#8674;</button>
+        </div>
+    </div>
+
+    <img src="" id="image-test">
+
+    <script>
+        let btnPrev = document.getElementById("previous").addEventListener("click", playerPrev);
+        let btnPlay = document.getElementById("play").addEventListener("click", playerEngine);
+        let btnNext = document.getElementById("next").addEventListener("click", playerNext);
+
+        let title = document.getElementById("title");
+        let artist = document.getElementById("artist");
+        let player = document.getElementById("player");
+        let image = document.getElementById("image-test");
+
+        let audioEngine;
+        let isPlaying = false;
+        let currentSong;
+        let albumCovers = [];
+
+        let musicPlaylist = [
+            {
+                title: "Freewheel Burning",
+                artist: "Judas Priest",
+                source: "https://files.catbox.moe/vq25l2.mp3",
+                albumId: "fba363c3-3013-4962-a88f-95e48e4fc538"
+            },
+            {
+                title: "Diamons and Rust",
+                artist: "Judas Priest",
+                source: "jsdfassj.mp3"
+            }
+        ]
+
+        async function returnAlbumCover(id) {
+            const response = await fetch('http://coverartarchive.org/release/' + id);
+            albumCovers = await response.json();
+            console.log(albumCovers);
+        }
+
+        async function playerEngine() {
+            for (let i = 0; i < musicPlaylist.length; i++) {
+                if (isPlaying == false) {
+                    currentSong = i;
+                    title.innerHTML = musicPlaylist[i].title;
+                    artist.innerHTML = musicPlaylist[i].artist;
+                    audioEngine = new Audio(musicPlaylist[i].source);
+                    audioEngine.play();
+                    returnAlbumCover(musicPlaylist[i].albumId);
+                    await (3000);
+                    image.src = albumCovers.images[0].image;
+                    isPlaying = true;
+                } else {
+                    audioEngine.pause();
+                }
+            }
+        }
+
+
+
+        function playerPrev() {
+            let audioEngine = new Audio();
+            audio.play();
+        }
+
+        function playerNext() {
+            let audioEngine = new Audio();
+            audio.play();
+        }
+    </script>
+</body>
+
+</html>
