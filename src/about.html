@@ -7,55 +7,49 @@
     <title>Last Rose of Summer</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .about {
-            color: #fff;
-            text-align: justify;
-            padding: 20px;
-            font-size: large;
-        }
-
-        .aboutcard {
-            background-color: rgb(63, 22, 22);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px;
-            position: relative;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .aboutcard img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-
         .arrow-link {
             text-decoration: none;
         }
-    
+
+        .arrow-link img {
+            width: 2.5rem;
+            transition: all 150ms ease-in-out;
+        }
+
+        .arrow-link img:hover {
+            filter: invert(42%) sepia(67%) saturate(2425%) hue-rotate(327deg) brightness(110%) contrast(102%);
+        }
+
+        main {
+            color: #fff;
+            font-size: 1.25rem;
+            background-color: rgb(63, 22, 22);
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-block: 1rem;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        main img {
+            border-radius: 0.75rem;
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
-        <img src="Rose.svg" alt="Left Image">
-        <h1>About the Project</h1>
-        <a href="index.html" class="arrow-link"><button class="arrow-icon"><img
-                    name="arrow-back-outline" src="line-md--arrow-left.svg"></img></button></a>
+        <img src="./public/icons/Rose.svg" alt="Left Image">
+        <h1 class="fancy-text">About the Project</h1>
+        <a href="index.html" class="arrow-link"><img name="arrow-back-outline"
+                src="./public/icons/line-md--arrow-left.svg"></img></a>
     </header>
 
-    <div class="aboutcard">
-        <img src="wallhaven-lmweyr.jpg" alt="Background Image">
-        <div class="about">
-            <p>Last rose of summer is a project developed by Flixin (or Fl1x1n) as a school project. 
-                <br>
-                
-            </p>
-        </div>
-    </div>
+    <main>
+        <img src="./public/img/wallhaven-lmweyr.jpg" alt="Background Image">
+        <p>Last rose of summer is a project developed by Flixin (or Fl1x1n) as a school project.
+        </p>
+    </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

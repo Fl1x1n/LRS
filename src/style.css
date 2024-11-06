@@ -1,206 +1,196 @@
-@import url('https://fonts.cdnfonts.com/css/iron-maiden');
+@import url("https://fonts.cdnfonts.com/css/iron-maiden");
 
 :root {
-    --_icon-size: 3rem;
-    --body-width: 1280px;
+  --_icon-size: 3rem;
+  --body-width: 1280px;
 }
 
 html {
-    font-size: 100%;
-
+  font-size: 100%;
 }
 
 body {
-    max-width: var(--body-width);
-    padding: 0;
-    margin: 0 auto;
-    font-family: Arial, sans-serif; 
-    background-color: #470d00; 
-    color: #333; 
-    font-size: 1rem;
+  max-width: var(--body-width);
+  padding: 0;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #470d00;
+  color: #333;
+  font-size: 1rem;
 }
 
 .flex-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  .flex-layout > :last-child,
-  .flex-layout > :first-child {
-    flex-basis: 14rem; 
-    flex-grow: 1;
-  }
-  
-  .flex-layout .main-content {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-inline-size: 60%;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
 
+.flex-layout > :last-child,
+.flex-layout > :first-child {
+  flex-basis: 15rem;
+  flex-grow: 1;
+}
 
-  .flex-layout > :last-child,
-  .flex-layout > :first-child,  .flex-layout .main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-    
+.flex-layout .main-content {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 40%;
+}
+
+.flex-layout > :last-child,
+.flex-layout > :first-child,
+.flex-layout .main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 button {
-    all: unset;
+  all: unset;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    font-style: italic;
+  display: block;
+  max-width: 100%;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    background-color: #000000; 
-    color: #ffffff; 
-    position:sticky;
-    top:0;
-    padding: 10px;
-    border-radius: 0 0 12px 12px;
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  border-radius: 0 0 0.75rem 0.75rem;
+  z-index: 1000;
 }
 
 .header .fancy-text {
-    font-family: 'Iron Maiden', sans-serif; 
-    font-size: 36px;
-    font-weight: bolder;
-    margin-right: auto;
-    animation: move-bg 14s infinite linear;
+  font-family: "Iron Maiden", sans-serif;
+  font-size: 36px;
+  font-weight: bolder;
+  margin-right: auto;
+  animation: move-bg 14s infinite linear;
 }
 
 .fancy-text {
-    --bg-size: 400%;
-    --color-one: hsl(0, 100%, 27%);
-    --color-two: hsl(0, 98%, 60%);
-    background: linear-gradient(
-                  90deg,
-                  var(--color-one),
-                  var(--color-two),
-                  var(--color-one)
-                ) 0 0 / var(--bg-size) 100%;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: move-bg 9s infinite linear;
+  --bg-size: 400%;
+  --color-one: hsl(0, 100%, 27%);
+  --color-two: hsl(0, 98%, 60%);
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 9s infinite linear;
 }
 
 @keyframes move-bg {
-    to {
-        background-position: var(--bg-size) 0;
-    }
+  to {
+    background-position: var(--bg-size) 0;
+  }
 }
 
 .header img {
-    height: 80px;
-    image-rendering: pixelated; 
-    margin-right: 20px;
+  height: 80px;
+  image-rendering: pixelated;
+  margin-right: 20px;
 }
 
-
-.footer {
-    grid-area: footer;
-    display: flex;  
-    background-color: #000000; 
-    color: #ffffff; 
-    position:sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 10px;
-    border-radius: 12px;
-}
 .menu-icon img {
-    width: var(--_icon-size);
-    height: var(--_icon-size);
+  width: var(--_icon-size);
+  height: var(--_icon-size);
 }
 
 .menu-icon {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 .dmicon {
-    font-size: 3rem;
-    transition: all 400ms ease-in-out;
+  font-size: 3rem;
+  transition: all 400ms ease-in-out;
 }
 
-.dmicon:hover, .menu-box:hover ~ .dmicon {
-    filter: brightness(0) saturate(100%) invert(75%) sepia(46%) saturate(2202%) hue-rotate(90deg) brightness(107%) contrast(102%);
-    font-size: 4rem;
-    rotate: 180deg;
+.dmicon:hover,
+.menu-box:hover ~ .dmicon {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(46%) saturate(2202%)
+    hue-rotate(90deg) brightness(107%) contrast(102%);
+  font-size: 4rem;
+  rotate: 180deg;
 }
 
 .menu-box {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    right: 40px;
-    transition: all 400ms cubic-bezier(.32, .75, .63, .88);
-    transition-delay: 100ms;
-    pointer-events: none;
-    z-index: 1;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  right: 40px;
+  transition: all 400ms cubic-bezier(0.32, 0.75, 0.63, 0.88);
+  transition-delay: 100ms;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .menu-icon:hover .menu-box,
 .menu-box:focus,
 .menu-box:hover {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-    right: 68px; 
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  right: 68px;
 }
 
-.menu-links {
-    display: flex;
-    align-items: center;
+.menu-box a {
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.menu-links a {
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, color 0.3s ease;
+.menu-box a:hover {
+  color: #ff3c3c;
 }
-
-.menu-links a:hover {
-    color: #ff3c3c; 
-}
-
 
 .arrow-icon img {
-    width: var(--_icon-size);
-    height: var(--_icon-size);
+  width: var(--_icon-size);
+  height: var(--_icon-size);
 }
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/*This section is for the grid code, basically the middle one*/
 
 .card {
-    background: white;
-    border-radius: 12px;
-    padding: 10px;
-
+  background: white;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
 }
 
-.Guitar_Formats {
-    border-radius: 20px;
-    margin: auto;
+.banner {
+  display: block;
+  margin: auto;
+  border-radius: 0.75rem;
 }
-.image{
-    margin: auto;
-    border-radius: 12px;
+
+.footer {
+  grid-area: footer;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
 }
