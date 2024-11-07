@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
         .player-container {
             display: flex;
             flex-direction: column;
@@ -13,6 +19,12 @@
             background: black;
             color: white;
             padding: 1rem;
+        }
+
+        .pc-meta {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
         }
 
         .pc__title {
@@ -42,85 +54,160 @@
             display: flex;
             justify-content: space-between;
         }
+
+        button[disabled] {
+            opacity: 0.5;
+        }
+
+        button span img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .pc-meta img {
+            position: relative;
+        }
+
+        img:not([src]) {
+            visibility: hidden;
+        }
+
+        .pc-meta::before {
+            content: "?";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 1rem;
+            width: 72px;
+            height: 72px;
+            position: absolute;
+            font-size: 2rem;
+            color: white;
+            background: rgb(67, 11, 11);
+        }
     </style>
 </head>
 
 <body>
     <div class="player-container" id="player">
-        <span class="pc__title" id="title">Music Title</span>
-        <span class="pc__artist" id="artist">Artist</span>
+        <div class="pc-meta"> <img id="image-test" width="72px" height="72px">
+            <p><span class="pc__title" id="title">Click play</span><br><span class="pc__artist" id="artist">No
+                    artist</span>
+            </p>
+        </div>
+
         <div class="pc-btns">
-            <button class="prev" id="previous">&#8672;</button>
-            <button class="play" id="play">&#8227;</button>
-            <button class="next" id="next">&#8674;</button>
+            <button class="prev" id="previous" disabled>&#8672;</button>
+            <button class="play" id="play"><span><img id="btnIcon" src="../public/icons/player/line-md--play-filled.svg"
+                        alt=""></span></button>
+            <button class="next" id="next" disabled>&#8674;</button>
         </div>
     </div>
 
-    <img src="" id="image-test">
-
     <script>
-        let btnPrev = document.getElementById("previous").addEventListener("click", playerPrev);
-        let btnPlay = document.getElementById("play").addEventListener("click", playerEngine);
-        let btnNext = document.getElementById("next").addEventListener("click", playerNext);
+        let musicPlaylist = [
+            {
+                title: "Freewheel Burning",
+                artist: "Judas Priest",
+                source: "https://files.catbox.moe/vq25l2.mp3",
+                cover: "https://lastfm.freetls.fastly.net/i/u/ar0/1e266ab9db1a4eecb79fe205d6ab1174.jpg"
+            },
+            {
+                title: "Diamons and Rust",
+                artist: "Judas Priest",
+                source: "https://files.catbox.moe/qupgd8.mp3",
+                cover: "https://ia800902.us.archive.org/21/items/mbid-fbf6e068-14e0-424f-91f7-dc4fa6f8b343/mbid-fbf6e068-14e0-424f-91f7-dc4fa6f8b343-11810170215.jpg"
+            }
+        ]
 
         let title = document.getElementById("title");
         let artist = document.getElementById("artist");
         let player = document.getElementById("player");
         let image = document.getElementById("image-test");
 
-        let audioEngine;
+        let btnPlay = document.getElementById("play");
+        let btnPrev = document.getElementById("previous");
+        let btnNext = document.getElementById("next");
+        let btnIcon = document.getElementById("btnIcon");
+
+        btnPlay.addEventListener("click", playerEngine);
+        btnPrev.addEventListener("click", playerPrev);
+        btnNext.addEventListener("click", playerNext);
+
+        let audioEngine = new Audio();
         let isPlaying = false;
-        let currentSong;
-        let albumCovers = [];
+        let currentSong = 0;
+        let paused = false;
 
-        let musicPlaylist = [
-            {
-                title: "Freewheel Burning",
-                artist: "Judas Priest",
-                source: "https://files.catbox.moe/vq25l2.mp3",
-                albumId: "fba363c3-3013-4962-a88f-95e48e4fc538"
-            },
-            {
-                title: "Diamons and Rust",
-                artist: "Judas Priest",
-                source: "jsdfassj.mp3"
-            }
-        ]
 
-        async function returnAlbumCover(id) {
-            const response = await fetch('http://coverartarchive.org/release/' + id);
-            albumCovers = await response.json();
-            console.log(albumCovers);
+        function loadMusic(id) {
+            title.innerHTML = musicPlaylist[id].title;
+            artist.innerHTML = musicPlaylist[id].artist;
+            image.src = musicPlaylist[id].cover;
+            audioEngine.src = musicPlaylist[id].source;
         }
 
-        async function playerEngine() {
-            for (let i = 0; i < musicPlaylist.length; i++) {
-                if (isPlaying == false) {
-                    currentSong = i;
-                    title.innerHTML = musicPlaylist[i].title;
-                    artist.innerHTML = musicPlaylist[i].artist;
-                    audioEngine = new Audio(musicPlaylist[i].source);
-                    audioEngine.play();
-                    returnAlbumCover(musicPlaylist[i].albumId);
-                    await (3000);
-                    image.src = albumCovers.images[0].image;
-                    isPlaying = true;
+
+        function playerEngine() {
+            btnPrev.disabled = false;
+            btnNext.disabled = false;
+            if (isPlaying) {
+                pauseMusic();
+                paused = true;
+            } else {
+                if (paused == false) {
+                    loadMusic(currentSong);
+                    playMusic();
                 } else {
-                    audioEngine.pause();
+                    playMusic();
                 }
+
             }
         }
 
+        function pauseMusic() {
+            paused = true;
+            audioEngine.pause();
+            isPlaying = false;
+            btnIcon.src = "../public/icons/player/line-md--play-filled.svg";
+        }
 
+        function playMusic() {
+            paused = false;
+            audioEngine.play();
+            isPlaying = true;
+            btnIcon.src = "../public/icons/player/line-md--pause.svg";
+        }
 
         function playerPrev() {
-            let audioEngine = new Audio();
-            audio.play();
+            if (currentSong > 0) {
+                currentSong - 1;
+                loadMusic(currentSong);
+                audioEngine.load();
+                playMusic();
+            } else {
+                loadMusic(0);
+                audioEngine.load();
+                playMusic();
+            }
         }
 
         function playerNext() {
-            let audioEngine = new Audio();
-            audio.play();
+            if (currentSong => 0) {
+                currentSong = + 1;
+                if (currentSong < musicPlaylist.length) {
+                    loadMusic(currentSong);
+                    audioEngine.load();
+                    playMusic();
+                } else if (currentSong == musicPlaylist.length) {
+                    currentSong = 0;
+                    loadMusic(currentSong);
+                    audioEngine.load();
+                    playMusic();
+                } else {
+
+                }
+            }
         }
     </script>
 </body>
