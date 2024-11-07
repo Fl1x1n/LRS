@@ -97,6 +97,12 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   animation: move-bg 9s infinite linear;
+  font-family: 'DS-Digital', sans-serif; 
+  font-size: 36px;
+}
+
+.card .fancy-text{
+  font-style: italic;
 }
 
 @keyframes move-bg {
@@ -211,10 +217,22 @@ a {
   justify-content: space-between;
 
 }
-/*easter button css*/
 
 .easter-button {
 
-  image-rendering: crisp-edges;
+  image-rendering: pixelated;
   
+}
+
+.buttons{
+height: 31px;
+width:88px;
+image-rendering: pixelated;
+}
+
+.site-buttons{
+  display: flex; 
+  justify-content: center; 
+  gap: 12px; flex-wrap: wrap;
+  image-rendering: pixelated;
 }
