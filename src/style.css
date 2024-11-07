@@ -10,6 +10,10 @@ html {
  
 }
 
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
 body {
   max-width: var(--body-width);
   padding: 0;
@@ -97,6 +101,12 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   animation: move-bg 9s infinite linear;
+  font-family: 'DS-Digital', sans-serif; 
+  font-size: 36px;
+}
+
+.card .fancy-text{
+  font-style: italic;
 }
 
 @keyframes move-bg {
@@ -189,6 +199,8 @@ a {
   background: hsla(0, 0%, 0%, 0.205);
   border-radius: 0.75rem;
   padding: 0.75rem;
+  justify-content: center; 
+  gap: 12px; flex-wrap: wrap;
 }
 
 .banner {
@@ -211,10 +223,46 @@ a {
   justify-content: space-between;
 
 }
-/*easter button css*/
 
 .easter-button {
 
-  image-rendering: crisp-edges;
+  image-rendering: pixelated;
   
+}
+
+.buttons{
+height: 31px;
+width:88px;
+image-rendering: pixelated;
+justify-content: center; 
+  gap: 12px; flex-wrap: wrap;
+}
+
+.site-buttons{
+  display: flex; 
+  justify-content: center; 
+  gap: 12px; flex-wrap: wrap;
+  image-rendering: pixelated;
+}
+
+.link-icon {
+  display: flex;
+  background: rgb(203, 203, 203);
+  padding: 0.75rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+}
+
+.link-icon img, .link-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+}
+
+.tools-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
