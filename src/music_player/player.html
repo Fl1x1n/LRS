@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--  
+
+© 2024 ReduxFlakes, Licensed under GPL2.0-only
+
+CSMSJS (Customizable, Simple, Music Player, JS)
+Made for Fl1x1n
+
+Source code: https://github.com/reduxflakes/csmsjs
+
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
+            box-sizing: border-box;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -36,7 +47,11 @@
             opacity: 0.8;
         }
 
-        button {
+        button,
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border: 1px solid white;
             background: black;
             color: white;
@@ -44,9 +59,11 @@
             text-align: center;
             width: 100%;
             font-size: 2rem;
+            padding: 0.25rem 1rem;
         }
 
-        button:hover {
+        button:hover,
+        .button:hover {
             background: #252525;
         }
 
@@ -85,6 +102,14 @@
             color: white;
             background: rgb(67, 11, 11);
         }
+
+        .lastfm-btn {
+            width: fit-content;
+        }
+
+        .lastfm-btn:hover {
+            border-color: red;
+        }
     </style>
 </head>
 
@@ -101,22 +126,28 @@
             <button class="play" id="play"><span><img id="btnIcon" src="../public/icons/player/line-md--play-filled.svg"
                         alt=""></span></button>
             <button class="next" id="next" disabled>&#8674;</button>
+            <a id="lastfm" href="https://last.fm" class="button lastfm-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="2rem" height="2rem" viewBox="0 0 256 256">
+                    <path fill="#ff3d3d"
+                        d="M252 160a44.05 44.05 0 0 1-44 44h-17.43a60.2 60.2 0 0 1-54.37-34.63l-30.15-64.59A36.13 36.13 0 0 0 73.43 84H64a36 36 0 0 0-36 36v24a36 36 0 0 0 36 36h8a28 28 0 0 0 25.68-16.8a12 12 0 1 1 22 9.6A52 52 0 0 1 72 204h-8a60.07 60.07 0 0 1-60-60v-24a60.07 60.07 0 0 1 60-60h9.43a60.2 60.2 0 0 1 54.37 34.63l30.2 64.59A36.13 36.13 0 0 0 190.57 180H208a20 20 0 0 0 0-40h-20a40 40 0 0 1 0-80h20a36 36 0 0 1 36 36a12 12 0 0 1-24 0a12 12 0 0 0-12-12h-20a16 16 0 0 0 0 32h20a44.05 44.05 0 0 1 44 44" />
+                </svg></a>
         </div>
     </div>
-
     <script>
         let musicPlaylist = [
             {
-                title: "Freewheel Burning",
-                artist: "Judas Priest",
-                source: "https://files.catbox.moe/vq25l2.mp3",
-                cover: "https://lastfm.freetls.fastly.net/i/u/ar0/1e266ab9db1a4eecb79fe205d6ab1174.jpg"
+                title: "Music 1",
+                artist: "Artist 1",
+                cover: "", /* where the album cover is located */
+                lastfm: "asdf", /* page of the song/release in Last.fm */
+                source: "" /* the file of the music */
             },
             {
-                title: "Diamons and Rust",
-                artist: "Judas Priest",
-                source: "https://files.catbox.moe/qupgd8.mp3",
-                cover: "https://ia800902.us.archive.org/21/items/mbid-fbf6e068-14e0-424f-91f7-dc4fa6f8b343/mbid-fbf6e068-14e0-424f-91f7-dc4fa6f8b343-11810170215.jpg"
+                title: "Music 2",
+                artist: "Artist 2",
+                cover: "",
+                lastfm: "",
+                source: ""
             }
         ]
 
@@ -124,6 +155,7 @@
         let artist = document.getElementById("artist");
         let player = document.getElementById("player");
         let image = document.getElementById("image-test");
+        let lastfmlink = document.getElementById("lastfm");
 
         let btnPlay = document.getElementById("play");
         let btnPrev = document.getElementById("previous");
@@ -137,13 +169,12 @@
         let audioEngine = new Audio();
         let isPlaying = false;
         let currentSong = 0;
-        let paused = false;
-
 
         function loadMusic(id) {
             title.innerHTML = musicPlaylist[id].title;
             artist.innerHTML = musicPlaylist[id].artist;
             image.src = musicPlaylist[id].cover;
+            lastfmlink.href = musicPlaylist[id].lastfm;
             audioEngine.src = musicPlaylist[id].source;
         }
 
@@ -151,29 +182,25 @@
         function playerEngine() {
             btnPrev.disabled = false;
             btnNext.disabled = false;
-            if (isPlaying) {
-                pauseMusic();
-                paused = true;
-            } else {
-                if (paused == false) {
-                    loadMusic(currentSong);
+            if (!isPlaying) {
+                if (audioEngine.src === musicPlaylist[currentSong].source && audioEngine.paused) {
                     playMusic();
                 } else {
+                    loadMusic(currentSong);
                     playMusic();
                 }
-
+            } else {
+                pauseMusic();
             }
         }
 
         function pauseMusic() {
-            paused = true;
             audioEngine.pause();
             isPlaying = false;
             btnIcon.src = "../public/icons/player/line-md--play-filled.svg";
         }
 
         function playMusic() {
-            paused = false;
             audioEngine.play();
             isPlaying = true;
             btnIcon.src = "../public/icons/player/line-md--pause.svg";
@@ -181,32 +208,26 @@
 
         function playerPrev() {
             if (currentSong > 0) {
-                currentSong - 1;
+                currentSong = currentSong - 1;
                 loadMusic(currentSong);
-                audioEngine.load();
                 playMusic();
-            } else {
-                loadMusic(0);
-                audioEngine.load();
+                /* restart the song if it's the first one in the playlist */
+            } else if (currentSong = musicPlaylist.length) {
+                currentSong = 0;
+                loadMusic(currentSong);
                 playMusic();
             }
         }
 
         function playerNext() {
-            if (currentSong => 0) {
-                currentSong = + 1;
-                if (currentSong < musicPlaylist.length) {
-                    loadMusic(currentSong);
-                    audioEngine.load();
-                    playMusic();
-                } else if (currentSong == musicPlaylist.length) {
-                    currentSong = 0;
-                    loadMusic(currentSong);
-                    audioEngine.load();
-                    playMusic();
-                } else {
-
-                }
+            if (currentSong < musicPlaylist.length) {
+                currentSong = currentSong + 1;
+                loadMusic(currentSong);
+                playMusic();
+            } else if (currentSong = musicPlaylist.length) {
+                currentSong = 0;
+                loadMusic(currentSong);
+                playMusic();
             }
         }
     </script>
