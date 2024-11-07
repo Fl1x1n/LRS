@@ -228,6 +228,8 @@ a {
 height: 31px;
 width:88px;
 image-rendering: pixelated;
+justify-content: center; 
+  gap: 12px; flex-wrap: wrap;
 }
 
 .site-buttons{
