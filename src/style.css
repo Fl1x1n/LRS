@@ -191,6 +191,7 @@ a {
   font-size: large;
   */
   background: white;
+  border: 6px double rgb(25,25,25);
   border-radius: 0.75rem;
   padding: 0.75rem;
   z-index: 10;
@@ -249,8 +250,9 @@ justify-content: center;
 .link-icon {
   display: flex;
   background: rgb(203, 203, 203);
-  padding: 0.75rem;
+  padding: 0.50rem;
   width: fit-content;
+  border: 2px solid rgb(157, 157, 157);
   border-radius: 0.5rem;
 }
 
