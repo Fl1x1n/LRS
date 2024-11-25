@@ -1,42 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="storestyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="storestyle.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-          <h1>Other Guitar Stores</h1>
-          <p class="intro">Other stores that we recommend.</p>
-        </header>
-        <section class="store-list">
-          <article class="store-card">
-            <h2>Egitana</h2>
+  <div class="container">
+    <header>
+      <h1>Other Guitar Stores</h1>
+    </header>
+    <div class="grid-layout">
+      <aside class="sidebar sidebar--left">
+        <section class="side-cards">
+          <a class="technics-btn" href="src\index.html"
+            style="background-image: url(../mybutton/LRS_button_1_alternate.png); image-rendering: pixelated;">Go
+            Back</a>
+        </section>
+      </aside>
+      <!--Main Content-->
+      <main class="main-content">
+        <article class="store-card">
+          <div class="store-content">
+            <h2 class="titles">Egitana</h2>
             <p>Based in Portugal, Egitana offers a wide range of music equipment, such as
-            guitars, pedals, audio interfaces, drum kits, accessories and more. Egitana
-            is the largest music store in Portugal and has gained a lot of popularity throughout 
-            time.</p>
+              guitars, pedals, audio interfaces, drum kits, accessories and more. Egitana
+              is the largest music store in Portugal and has gained a lot of popularity throughout
+              time. Actually bought my guitar here and so far they have done an amazing job with the
+              periodic maintenance. Cons? The website lacks a bit in design, but that's just my personal
+              opinion. Please note that the website won't load if you live outside Portugal. Instead click on
+              <a class="links-hover" href="https://www.youtube.com/@Egitana">this</a> to visit their oficial youtube
+              channel.
+            </p>
             <a href="https://egitana.pt" target="_blank" class="store-link">Visit Egitana</a>
-          </article>
-          <article class="store-card">
-            <h2>Thomann</h2>
-            <p>Thomann is a music equipment store, created in Germany. Recently the store has 
-                reached their 70th anniversary, proving it's big longevity.
-                On Thomann the customer can find basically anything music related. Intruments, 
-                amplifiers, mics, cabinets, etc. 
+          </div>
+          <img src="store_logos/egi_lg.png" alt="Egitana logo" class="store-logo">
+        </article>
+        <article class="store-card">
+          <div class="store-content">
+            <h2 class="titles">Thomann</h2>
+            <p>Thomann is a music equipment store, created in Germany. Recently the store has
+              reached their 70th anniversary, proving it's big longevity.
+              On Thomann the customer can find basically anything music related. Intruments,
+              amplifiers, mics, cabinets, etc. The only "problem" is the delivery time, but considering
+              they ship throughout Europe I think it's absolutely fair.
             </p>
             <a href="https://www.thomann.de" target="_blank" class="store-link">Visit Thomann</a>
-          </article>
-          <article class="store-card">
-            <h2>Guitar Center</h2>
-            <p>Based in the US, Guitar Center is a well-known destination for guitars, 
-            amps, percussion, and pro-audio equipment.</p>
-            <a href="https://www.guitarcenter.com" target="_blank" class="store-link">Visit Guitar Center</a>
-          </article>
+          </div>
+          <img src="store_logos/tho_lg.png" alt="Thomann logo" class="store-logo">
+        </article>
+        <article class="store-card">
+          <div class="store-content">
+            <h2 class="titles">Sweetwater</h2>
+            <p>Based in the US, we heard the store is quite famous and respected.
+              They have a nice guitar catalog. The only thing that lacks in my opinion
+              is the guitar separation. Other sites are more specific in the categorization,
+              like stratocaster, double cut, single cut, heavy, etc. On Sweetwater is quite
+              worse.
+            </p>
+            <a href="https://www.guitarcenter.com" target="_blank" class="store-link">Visit Sweetwater</a>
+          </div>
+          <img src="store_logos/sw_logo.png" alt="Sweetwater logo" class="store-logo">
+        </article>
+        <footer class="footer">
+          <p>&copy; 2024 Last Rose of Summer - All Rights Reserved</p>
+          <p>Powered by Technics. Designed with care ♡ </p>
+        </footer>
+      </main>
+      <!--Sidebar Right-->
+      <aside class="sidebar sidebar--right">
+        <section class="side-cards">
+          <a class="technics-btn" href="">Our Choice</a>
+          <a class="technics-btn" href="">My Equipment</a>
         </section>
-      </div>
+      </aside>
+
+    </div>
+
+  </div>
+
 </body>
+
 </html>
