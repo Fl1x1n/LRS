@@ -1,5 +1,8 @@
+/*
 @import url("https://fonts.cdnfonts.com/css/iron-maiden");
+*/
 @import url('https://fonts.cdnfonts.com/css/ds-digital');
+
 :root {
   --_icon-size: 3rem;
   --body-width: 1280px;
@@ -7,10 +10,13 @@
 
 html {
   font-size: 100%;
- 
+
+
 }
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,22 +29,19 @@ body {
   background-repeat: repeat;
   background-size: auto;
   background-position: center;
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #470d00;
   color: #333;
   font-size: 1rem;
- 
- backdrop-filter: blur(3px);
- 
- 
- 
+  backdrop-filter: blur(3px);
+  margin: 0;
+  padding: 1px;
 }
 
 .container {
   max-width: var(--body-width);
   margin: 0 auto;
-  
+
 }
 
 .flex-layout {
@@ -48,8 +51,8 @@ body {
   padding: 1rem;
 }
 
-.flex-layout > :last-child,
-.flex-layout > :first-child {
+.flex-layout> :last-child,
+.flex-layout> :first-child {
   flex-basis: 15rem;
   flex-grow: 1;
 }
@@ -60,8 +63,8 @@ body {
   min-inline-size: 40%;
 }
 
-.flex-layout > :last-child,
-.flex-layout > :first-child,
+.flex-layout> :last-child,
+.flex-layout> :first-child,
 .flex-layout .main-content {
   display: flex;
   flex-direction: column;
@@ -96,8 +99,9 @@ a {
 }
 
 .header .fancy-text {
-  font-family: "Iron Maiden", sans-serif;
-  font-size: 36px;
+  font-family: 'DS-Digital', sans-serif;
+  font-style: italic;
+  font-size: 48px;
   font-weight: bolder;
   margin-right: auto;
   animation: move-bg 14s infinite linear;
@@ -107,22 +111,19 @@ a {
   --bg-size: 400%;
   --color-one: hsl(0, 100%, 27%);
   --color-two: hsl(0, 98%, 60%);
-  background: linear-gradient(
-      90deg,
+  background: linear-gradient(90deg,
       var(--color-one),
       var(--color-two),
-      var(--color-one)
-    )
-    0 0 / var(--bg-size) 100%;
+      var(--color-one)) 0 0 / var(--bg-size) 100%;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   animation: move-bg 9s infinite linear;
-  font-family: 'DS-Digital', sans-serif; 
+  font-family: 'DS-Digital', sans-serif;
   font-size: 36px;
 }
 
-.card .fancy-text{
+.card .fancy-text {
   font-style: italic;
 }
 
@@ -156,9 +157,8 @@ a {
 }
 
 .dmicon:hover,
-.menu-box:hover ~ .dmicon {
-  filter: brightness(0) saturate(100%) invert(75%) sepia(46%) saturate(2202%)
-    hue-rotate(90deg) brightness(107%) contrast(102%);
+.menu-box:hover~.dmicon {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(46%) saturate(2202%) hue-rotate(90deg) brightness(107%) contrast(102%);
   font-size: 4rem;
   rotate: 180deg;
 }
@@ -215,12 +215,13 @@ a {
   z-index: 10;
 }
 
-.image-cards{
+.image-cards {
   background: hsla(0, 0%, 0%, 0.205);
   border-radius: 0.75rem;
   padding: 0.75rem;
-  justify-content: center; 
-  gap: 12px; flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .banner {
@@ -228,16 +229,17 @@ a {
   margin: auto;
   border-radius: 0.75rem;
 }
-.banner-guitars{
+
+.banner-guitars {
   display: block;
   margin: auto;
-  
-  
+
+
 }
 
 
 .footer {
-  font-family: 'DS-Digital', sans-serif;                                  
+  font-family: 'DS-Digital', sans-serif;
   grid-area: footer;
   background-color: #000000;
   color: #ffffff;
@@ -254,21 +256,23 @@ a {
 .easter-button {
 
   image-rendering: pixelated;
-  
+
 }
 
-.buttons{
-height: 31px;
-width:88px;
-image-rendering: pixelated;
-justify-content: center; 
-  gap: 12px; flex-wrap: wrap;
+.buttons {
+  height: 31px;
+  width: 88px;
+  image-rendering: pixelated;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.site-buttons{
-  display: flex; 
-  justify-content: center; 
-  gap: 12px; flex-wrap: wrap;
+.site-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
   image-rendering: pixelated;
 }
 
@@ -281,7 +285,8 @@ justify-content: center;
   border-radius: 0.5rem;
 }
 
-.link-icon img, .link-icon svg {
+.link-icon img,
+.link-icon svg {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.25rem;
