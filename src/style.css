@@ -228,6 +228,7 @@ a {
   display: block;
   margin: auto;
   border-radius: 0.75rem;
+  image-rendering: auto;
 }
 
 .banner-guitars {
@@ -299,3 +300,5 @@ a {
   gap: 0.5rem;
   flex-wrap: wrap;
 }
+
+

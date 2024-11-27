@@ -13,6 +13,7 @@
     <header class="header">
         <img src="public/icons/Rose.svg" alt="Left Image">
         <h1 class="fancy-text">Last Rose of Summer</h1>
+        
         <div class="menu-icon">
             <nav class="menu-links menu-box">
                 <a href="about">About</a>
@@ -32,31 +33,42 @@
             <a href="about" class="card">
                 <h2 class="fancy-text" style="--color-one: hsl(0, 100%, 22%);--color-two:hsl(0, 100%, 55%);">About
                 </h2>
-                <p>
-                    Last Rose of Summer is an online guitar store, founded in 2024 by Me. The idea came to life after I
-                    began
-                    playing electric guitar. Due to my passion for both the guitar and coding, I decided to mix both
-                    things in some
-                    sort of way. The code is not optimized at all, and a lot of things that I know has been thaught by
-                    the man itself
-                    ReduxFlakes. In consideration for him, I decided to dedicate a small portion of my site to one of
-                    his projects,
-                    Surfscape. Please visit his site once you're done with mine. (Please take into consideration that
-                    this Website
-                    is a mockup, so I'm not in fact selling guitars. Maybe one day 😊).</p>
-            </a>
+                <!--
+                    <p>
+                        Last Rose of Summer is an online guitar store, founded in 2024 by Me. The idea came to life after I
+                        began
+                        playing electric guitar. Due to my passion for both the guitar and coding, I decided to mix both
+                        things in some
+                        sort of way. The code is not optimized at all, and a lot of things that I know has been thaught by
+                        the man itself
+                        ReduxFlakes. In consideration for him, I decided to dedicate a small portion of my site to one of
+                        his projects,
+                        Surfscape. Please visit his site once you're done with mine. (Please take into consideration that
+                        this Website
+                        is a mockup, so I'm not in fact selling guitars. Maybe one day 😊).</p>
+                        -->
+                        <p>Last Rose of Summer is... I don't know. I consider it as a "pile" of things I like. A bit of it's
+                            original story can be found by clicking on this card.
+                            It started as a mockup of a guitar store but quickly became a confuse thingie with a bunch of 
+                            shit. Hope you like what I've done. Please consider leaving a suggestion. Right now the only way 
+                            of contacting me is via github. I'm working on adding a discord link. Thanks for the patience. 
+                            You'll find a bunch of things in this site as I said before. One of them is a small consideration for 
+                            ReduxFlakes, who helps me develop my code and stay a bit organized. You can find his current project
+                            on the middle section of my website.
+                        </p>
+                    </a>
             <a href="https://www.songsterr.com/" class="card">
                 <h2 class="fancy-text" style="--color-one: hsl(236, 100%, 27%);--color-two:hsl(241, 98%, 60%);">Want
                     Tabs?
                 </h2>
-                <p>Check out Songsterr, our predilect tablature app.</p>
-                <img class="banner" src="public/img/app_logo.png" alt="Songsterr_Logo" height="100px" width="100px">
+                <p>Check out Songsterr, my predilect tablature app.</p>
+                <img class="banner" src="public/img/app_logo.png" alt="Songsterr_Logo" height="100px" width="100px" title="Songsterr">
             </a>
             <section class="card">
                 <h2 class="fancy-text" style="--color-one: hsl(49, 100%, 27%);--color-two:hsl(61, 73%, 49%);" >Webrings</h2>
                <p>Webrings this site is mentioned or included.</p>
-                <p style="display: flex;">
-                <script src="https://nuthead.neocities.org/ring/ring.js"></script> 
+                <p style="display: flex;" title="Null's Webring">
+                <script src="https://nuthead.neocities.org/ring/ring.js" ></script> 
                </p>
             </section>
             <section class="card">
@@ -75,14 +87,18 @@
                     <a href="https://velvetblue.neocities.org/" title="Velvet Blue">
                         <img class="buttons" src="public/buttons/button.png" alt="Velvet Blue" loading="lazy">
                     </a>
-                    <a href="https://bedr00mz.neocities.org/" alt="Bedr00mz">
+                    <a href="https://bedr00mz.neocities.org/" title="Bedr00mz">
                         <img class="buttons" src="public/buttons/Bedr00mZ.gif" alt="bedr00mz" loading="lazy">
                     </a>
                     <a href="https://alicebluef0f8ff.neocities.org/" title="Alice">
                         <img class="buttons" src="public/buttons/alicebluef0f8ff.gif" alt="Alice" loading="lazy">
                     </a>
+                    <a href="https://fauux.neocities.org/" title="fauux">
+                        <img class="buttons" src="public/buttons/fauux-btn-01.gif" alt="Fauux" loading="lazy">
+                    </a>
                 </p>
             </section>
+            
         </aside>
         <!--Main Content-->
         <main id="main-content" class="main-content">
@@ -238,17 +254,15 @@
                 <div class="player-container" id="player">
                     <div class="pc-meta"> <img id="image-test" width="72px" height="72px">
                         <p><span class="pc__title" id="title">Click play</span><br><span class="pc__artist"
-                                id="artist">No
-                                artist</span>
+                                id="artist">No artist</span>
                         </p>
                     </div>
 
                     <div class="pc-btns">
-                        <button class="prev" id="previous" disabled>&#8672;</button>
-                        <button class="play" id="play"><span><img id="btnIcon"
-                                    src="public/icons/player/line-md--play-filled.svg" alt=""></span></button>
-                        <button class="next" id="next" disabled>&#8674;</button>
-                        <a id="lastfm" href="https://last.fm" class="button lastfm-btn"><svg
+                        <button title="Previous" class="prev" id="previous" disabled>&#8672;</button>
+                        <button  title="Play" class="play" id="play"><span><img id="btnIcon" src="public/icons/player/line-md--play-filled.svg" alt=""></span></button>
+                        <button title="Next" class="next" id="next" disabled>&#8674;</button>
+                        <a title="LastFM" id="lastfm" href="https://last.fm" class="button lastfm-btn"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 256 256">
                                 <path fill="#ff3d3d"
                                     d="M252 160a44.05 44.05 0 0 1-44 44h-17.43a60.2 60.2 0 0 1-54.37-34.63l-30.15-64.59A36.13 36.13 0 0 0 73.43 84H64a36 36 0 0 0-36 36v24a36 36 0 0 0 36 36h8a28 28 0 0 0 25.68-16.8a12 12 0 1 1 22 9.6A52 52 0 0 1 72 204h-8a60.07 60.07 0 0 1-60-60v-24a60.07 60.07 0 0 1 60-60h9.43a60.2 60.2 0 0 1 54.37 34.63l30.2 64.59A36.13 36.13 0 0 0 190.57 180H208a20 20 0 0 0 0-40h-20a40 40 0 0 1 0-80h20a36 36 0 0 1 36 36a12 12 0 0 1-24 0a12 12 0 0 0-12-12h-20a16 16 0 0 0 0 32h20a44.05 44.05 0 0 1 44 44" />
@@ -375,7 +389,7 @@
                     }
                 </script>
             </section>
-            <a href="https://surfscape.neocities.org/" class="card">
+            <a href="https://surfscape.neocities.org/" class="card" title="SurfScape">
                 <h2 class="fancy-text" style="--color-one: hsl(226, 100%, 27%);--color-two:hsl(0, 0%, 67%);">SurfScape
                 </h2>
                 <p>As mentioned earlier, this website has a small section for my friend ReduxFlakes, that has helped me
@@ -413,15 +427,16 @@
                 </p>
             </a>
             <section class="card" style="grid-column: 6 /  13;--row:4;">
-                <h2 class="fancy-text" style="--color-one: hsl(282, 100%, 27%);--color-two:hsl(290, 98%, 60%);">Owner's
-                    Personal Website</h2>
-                <p> This link redirects you to my personal website (under construction for now).</p>
+                <h2 class="fancy-text" style="--color-one: hsl(282, 100%, 27%);--color-two:hsl(290, 98%, 60%);">About Me</h2>
+                <p>By clicking on this you will be redirected into a small page were I talk a bit about myself. My gear, games
+                    I play, things I enjoy and some other stuff. (under construction).
+                </p>
             </section>
             <section class="card">
                 <h2 class="fancy-text" style="--color-one: hsl(261, 100%, 27%);--color-two:hsl(261, 98%, 60%);">Apps
                     Used</h2>
                 <p>Apps I use to make my projects come to life.</p>
-                <p class="tools-container"> <a href="https://code.visualstudio.com/" class="link-icon">
+                <p class="tools-container"> <a href="https://code.visualstudio.com/" class="link-icon" title="Visual Studio">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                             <mask id="deviconVscode0" width="128" height="128" x="0" y="0" maskUnits="userSpaceOnUse"
                                 style="mask-type:alpha">
@@ -475,7 +490,7 @@
                             </defs>
                         </svg>
                     </a>
-                    <a href="https://www.figma.com" class="link-icon">
+                    <a href="https://www.figma.com" class="link-icon" title="Figma">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                             <path fill="#0acf83"
                                 d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129m0 0" />
@@ -488,8 +503,7 @@
                                 d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5S76.6 43 88.5 43S110 52.6 110 64.5m0 0" />
                         </svg>
                     </a>
-                    <a href="https://store.steampowered.com/app/1204050/Pixel_Studio__pixel_art_editor/"
-                        class="link-icon">
+                    <a href="https://store.steampowered.com/app/1204050/Pixel_Studio__pixel_art_editor/" class="link-icon" title="Pixel Studio">
                         <img src="public/icons/ps.png" alt="Pixel Studio">
                     </a>
                 </p>
@@ -505,11 +519,11 @@
                     it.)
                 </p>
                 <p class="site-buttons">
-                    <a href="https://lastroseofsummer.neocities.org/">
+                    <a href="https://lastroseofsummer.neocities.org/" title="LRS Static">
                         <img class="my-buttons" src="mybutton/LRS_button_1.png" alt="LRSstatic" height="31px"
                             width="88px" loading="lazy">
                     </a>
-                    <a href="https://lastroseofsummer.neocities.org/">
+                    <a href="https://lastroseofsummer.neocities.org/" title="LRS Animated">
                         <img class="my-buttons" src="mybutton/LRS.gif" alt="LRSgif" height="31px" width="88px"
                             loading="lazy">
                     </a>
@@ -517,9 +531,10 @@
             </section>
         </aside>
     </div>
+   
     <footer class="footer">
         By Fl1x1n 2024 ©
-        <a href="easteregg/index.html">
+        <a href="easteregg/index.html" title="The Dark Side of The Moon">
             <img class="easter-button" src="easteregg/TDSOTM.png" alt="easterbutton">
         </a>
     </footer>
