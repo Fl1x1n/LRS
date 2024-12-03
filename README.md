@@ -8,6 +8,4 @@ That's how LRS appeared in the first place. Than I thought,
 why not turn it into a mockup-ish of a guitar store? And currently
 that's the main objective of the website. It lacks a lot of things,
 and if you read my code you'll probably have a heart attack BUUTTTT 
-at least I'm open to suggestions (please share them :) 
-
-
+at least I'm open to suggestions (please share them :)
