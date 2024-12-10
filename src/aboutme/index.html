@@ -14,119 +14,98 @@
 
 .arrow-link img {
     width: 2.5rem;
-    transition: all 150ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 
 .arrow-link img:hover {
     filter: invert(42%) sepia(67%) saturate(2425%) hue-rotate(327deg) brightness(110%) contrast(102%);
 }
-
-
-
-
-
-/*this is for the text*/
-.abt {
-    --bg-size: 400%;
-    --color-one: hsl(0, 100%, 76%);
-    --color-two: hsl(0, 100%, 38%);
-    background: linear-gradient(90deg,
-            var(--color-one),
-            var(--color-two),
-            var(--color-one)) 0 0 / var(--bg-size) 100%;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: move-bg 12s infinite linear;
-    font-family: 'DS-Digital', sans-serif;
-    font-weight: bold;
-    font-style: italic;
-
-}
-
-.about-card {
-    color: #ffffff;
-    background: rgb(14, 14, 14);
-    border: 6px double rgb(88, 88, 88);
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin: 2.5rem;
-}
-
-main img {
-    border-radius: 0.75rem;
-}
-
-body {
-    background-image: url(../public/img/BG_LRS.png);
-    image-rendering: pixelated;
-    background-repeat: repeat;
-    background-size: auto;
-    background-position: center;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #333;
-    font-size: 1rem;
-    backdrop-filter: blur(3px);
-    padding: 1px;
-}
-
-.flex-container {
-    float: right;
-    justify-content: end;
-    margin: 1rem;
-}
-
-.imagee {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    image-rendering: pixelated;
-}
-p {
-    text-align: justify;
-}
-
     </style>
+    <link rel="shortcut icon" href="../public/icons/favicon.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <img src="../public/icons/Rose.svg" alt="Left Image">
+            <img src="../public/icons/rose.png" alt="Left Image">
             <h1 class="fancy-text">About Me</h1>
             <a href="../index.html" class="arrow-link"><img name="arrow-back-outline"
                     src="../public/icons/line-md--arrow-left.svg"></img></a>
         </header>
         <main>
             <section class="about-card">
-                <h2 class="abt">Fl1x1n</h2>
-                <div class="flex-container">
-                    <img class="imagee" src="../public/img/dithered-image.png" width="480" height="300"
-                        alt="Background Image">
+                <div class="profile-container">
+                    <img class="profile-image" src="../public/img/medithered.png" alt="Profile Picture" title="Frieren because Fl1x1n">
+                    <div class="profile-info">
+                        <h2 class="abt">Fl1x1n</h2>
+                        <p class="profile-text">
+                            Hello m8! My name is Flixin or Fl1x1n (numbers make it sound more cool). Currently I'm 17
+                            years old and studying computer science. I don't really know what I should be writing here, but 
+                            I'll try to make it sound interesting.
+                        </p>
+                        <blockquote class="profile-text">
+                            <p>“I've not stopped crying since you went away...”</p>
+                        </blockquote>
+                    </div>
                 </div>
-                
-                <p> 
-                    Hello fella! My name is Flixin or Fl1x1n (numbers make it sound more cool). Currently I'm 17
-                    years old and studying computer science. I don't really know what I should be writing here, but 
-                    I'll try to make it sound interesting.
-                </p>
                 <h3 class="abt" style="--color-one: hsl(112, 100%, 76%);--color-two: hsl(109, 100%, 38%);">Things I enjoy</h3>
                 <p> 
                     I end up enjoying a lot of things. My main idea was to become a car mechanic but due to some 
                     problems with the school that teaches it I decided to go for computer science instead. 
                     That ended up resulting in a amalgamation named Fl1x1n. I also love music a lot and ended up
-                    buying a guitar. My journey on the guitar has been quite bumpy to say the least. I decided
+                    buying a guitar. My journey on it has been quite <b>bumpy</b> to say the least. I decided
                     to buy a guitar with a floyd rose and after 6 months my strings got quite rusty. "Let's try
                     to do it myself!" and that made me spend 60 currencies on a maintenance. Fortunately i didn't 
                     damage anything but I got quite sad and stopped for a while. Recently I've been practicing "daily"
-                    but I seem to be stagnant. Maybe I'll find a way to solve my issues.
+                    but I seem to be stagnant. Maybe I'll find a way to solve my issues. I also collect Vinyl Records.
+                    You can find my collection <a href="https://www.discogs.com/user/Flixin/collection?header=1">here</a>.
                 </p>
                 <p>
                     I also know some things about woodwork and farming since I end up helping my grandmother by plowing
                     using a small tractor and my father when he has work on weekends. I'll try to make a personal website
-                    in the future to make things better (with the intent of only talking about me).
+                    in the future to make things more organized.
                 </p>
+                <h2 class="abt">Games I Play (click on the cards)</h2>
+                <div class="games-container">
+                    
+                    <div class="games-container">
+                        <details class="game-card">
+                          <summary>
+                            <img src="../public/img/games/Bloodborne_logo_black.svg" alt="Bloodborne" class="game-image" title="Bloodborne">
+                          </summary>
+                          <p>“Farewell good hunter, may you find your worth in the waking world.” I love dolls... and suffering.</p>
+                          <img class="dithereds" src="../public/img/games/DSAT.gif" alt="Bloodborne_SS" title="Bloodborne_SS" loading="lazy">
+                        </details>
+                        <details class="game-card">
+                          <summary>
+                            <img src="../public/img/games/Dark_Souls_logo_black.svg" alt="Dark Souls" class="game-image" title="Dark Souls">
+                          </summary>
+                          <p>Sadly I'm constantly tired to play souls games (maybe on this Christmas vacation).</p>
+                          <img class="dithereds" src="../public/img/games/dk.gif" alt="dark_souls" title="dark_souls_gif" loading="lazy">
+                        </details>
+                        <details class="game-card">
+                          <summary>
+                            <img src="../public/img/games/Nier_Replicant_ver.1.22474487139...webp" alt="Nier Replicant" class="game-image" title="Nier Replicant">
+                          </summary>
+                          <p>Started playing it last weekend and I already fell in love with this game to be honest.</p>
+                          <img class="dithereds" src="../public/img/games/121871.gif" alt="Nier_Replicant_ver" title="Nier Replicant" loading="lazy">
+                        </details>
+                        <details class="game-card">
+                          <summary>
+                            <img src="../public/img/games/Dirt_Rally_2.0_Logo.svg" alt="Dirt Rally 2.0" class="game-image" title="Dirt Rally 2.0" height="74">
+                          </summary>
+                          <p>Kissing trees at 200Km/h.</p>
+                          <img class="dithereds" src="../public/img/games/dirt.gif" alt="Dirt_SS" title="Dirt_SS" loading="lazy">
+                        </details>
+                        <details class="game-card">
+                          <summary>
+                            <img src="../public/img/games/snowrunner.png" alt="Snowrunner" class="game-image" title="Snowrunner">
+                          </summary>
+                          <p>Only game that I can play without frying my brain. This game is therapeutic af fr fr.</p>
+                          <img class="dithereds" src="../public/img/games/snowrunner-drift.gif" alt="Snowrunner_gif" title="Snowrunner_gif" loading="lazy">
+                        </details>
+                      </div>
+                      
+                </div>
 
                 <h3 class="abt" style="--color-one: hsl(112, 100%, 76%);--color-two: hsl(109, 100%, 38%);">Personal Car</h3>
 
@@ -142,7 +121,7 @@ p {
                 
                 <p> 
                     I thought it would be a nice idea to share some of my equipment here.
-                    Here's my guitar gear:
+                    Here's my gear:
                     <h3 class="abt" style="--color-one: hsl(112, 100%, 76%);--color-two: hsl(109, 100%, 38%);">Guitar</h3>
                     <ul>
                         <li>Jackson JS32 Dinky dka-m arch top (black);</li>
@@ -159,7 +138,7 @@ p {
                         <li>Audio Technica AT-LPX60usb.</li>
                     </ul>
                     <h3 class="abt" style="--color-one: hsl(112, 100%, 76%);--color-two: hsl(109, 100%, 38%);">PC</h3>
-                    <p>Currently I don't have a PC yet. I rely on the school computer for bringing
+                    <p>Currently I don't have a PC yet. I rely on the school computerto bring
                         my projects to life. Since I'll be leaving school by july, my projects will
                         most definitely be paused. For now I have this:
                     </p>

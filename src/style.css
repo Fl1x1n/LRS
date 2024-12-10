@@ -33,7 +33,7 @@ body {
   background-color: #000000;
   color: #333;
   font-size: 1rem;
-  backdrop-filter: blur(3px);
+
   margin: 0;
   padding: 1px;
 }
@@ -228,12 +228,13 @@ a {
   display: block;
   margin: auto;
   border-radius: 0.75rem;
-  image-rendering: auto;
+  image-rendering: pixelated;
 }
 
 .banner-guitars {
   display: block;
   margin: auto;
+image-rendering: pixelated;
 
 
 }

@@ -6,10 +6,11 @@
 :root {
   --_icon-size: 3rem;
   --body-width: 1280px;
+  color-scheme: dark;
 }
 html {
   font-size: 100%;
-
+  
 
 }
 *,
@@ -27,14 +28,13 @@ body {
   background-color: #000000;
   color: #333;
   font-size: 1rem;
-  backdrop-filter: blur(3px);
   margin: 0;
   padding: 1px;
 }
 .container {
   max-width: var(--body-width);
   margin: 0 auto;
-
+  
 }
 
 img {
@@ -42,9 +42,12 @@ img {
   max-width: 100%;
   font-style: italic;
 }
-a {
-  text-decoration: none;
-  color: inherit;
+
+
+blockquote {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: larger;
 }
 .header {
   display: flex;
@@ -70,9 +73,9 @@ a {
   --color-one: hsl(98, 100%, 27%);
   --color-two: hsl(108, 98%, 60%);
   background: linear-gradient(90deg,
-      var(--color-one),
-      var(--color-two),
-      var(--color-one)) 0 0 / var(--bg-size) 100%;
+  var(--color-one),
+  var(--color-two),
+  var(--color-one)) 0 0 / var(--bg-size) 100%;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -109,6 +112,171 @@ a {
   padding: 0.75rem;
   z-index: 10;
 }
+
+
+/*this is for the text*/
+.abt {
+  --bg-size: 400%;
+  --color-one: hsl(0, 100%, 76%);
+  --color-two: hsl(0, 100%, 38%);
+  background: linear-gradient(90deg,
+  var(--color-one),
+  var(--color-two),
+          var(--color-one)) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 12s infinite linear;
+  font-family: 'DS-Digital', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  
+}
+
+.about-card {
+  color: #ffffff;
+  background: rgb(14, 14, 14);
+  border: 6px double rgb(88, 88, 88);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin: 2.5rem;
+}
+
+
+body {
+  background-image: url(../public/img/BG_LRS.png);
+  image-rendering: pixelated;
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  margin: 2px;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #333;
+  font-size: 1rem;
+  backdrop-filter: blur(3px);
+  padding: 1px;
+}
+
+.flex-container {
+  float: left;
+  justify-content: start;
+  margin: 1rem;
+}
+
+.imagee {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+.games-container {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+  align-items: start;
+  gap: 1.5rem;
+
+        }
+
+        .game-card {
+          background: rgb(14, 14, 14);
+          border: 4px solid rgb(88, 88, 88);
+          border-radius: 1rem;
+          color: white;
+          padding: 1rem;
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .game-card summary {
+          display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      
+      .game-card {
+        align-self: stretch;
+        height: 120px;
+      }
+      
+      .games-container *:has([open]) .game-card {
+        align-self: auto;
+        
+      }
+      
+      .game-card[open] {
+        height: auto;
+      }
+
+      
+      
+      
+      /* easter egg */
+      .with-arms-hide[open] {
+        content: "under the sunlight"
+      }
+
+      .game-card:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 0 8px rgb(63, 63, 63), 0 0 16px rgb(115, 115, 115), 0 0 24px rgb(196, 196, 196);
+        transition: transform 0.4s ease, box-shadow 0.6s ease;
+      }
+      
+      .game-image {
+          max-width: 100%;
+        }
+        
+        
+        
+        .game-card h4 {
+          font-family: 'DS-Digital', sans-serif;
+          font-size: 1.25rem;
+          margin: 0.5rem 0;
+        }
+        
+        .game-card p {
+          font-size: 0.875rem;
+          line-height: 1.4;
+        }
+p {
+  text-align: justify;
+}
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; 
+  text-align: left; 
+}
+.profile-text{
+  flex: 1;
+}
+
+.profile-image {
+  width: 160px; 
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.profile-info {
+  flex: 1; 
+}
+
+.profile-info h2,
+.profile-info p {
+  margin: 0; 
+}
+
+.profile-info h2 {
+  margin-bottom: 0.5rem; 
+}
+
+.dithereds{
+  image-rendering: pixelated;
+  border-radius: 0.5rem;
+}
 .footer {
   font-family: 'DS-Digital', sans-serif;
   grid-area: footer;
@@ -121,6 +289,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  
 }
 
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column; 
+  }
+}
