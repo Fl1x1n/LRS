@@ -42,7 +42,13 @@ img {
   max-width: 100%;
   font-style: italic;
 }
-
+.text{
+  color: #DE0947;
+  font-weight: bold;
+}
+ a {
+  font-style: italic;
+}
 
 blockquote {
   font-family: 'Times New Roman', Times, serif;
